@@ -12,7 +12,11 @@
 
         {{ partial "nav.html" . }}
 
-        {{ partial "breadcrumbs.html" . }}
+        {{ if eq .Data.Singular "author" }}
+            {{ partial "breadcrumbs.html" .Params.name }}
+        {{ else }}
+            {{ partial "breadcrumbs.html" .Title }}
+        {{ end }}
 
         <div id="content">
             <div class="container">
