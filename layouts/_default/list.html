@@ -21,6 +21,11 @@
 
                     <div class="col-md-9" id="blog-listing-medium">
 
+                        {{ if eq .Data.Singular "author" }}
+                            {{ partial "author_bio.html" . }}
+                            <div class="list-separator"> </div>
+                            <h2>{{ i18n "posts" }}</h2>
+                        {{ end }}
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) }}
                         {{ range $paginator.Pages }}
                         <section class="post">
