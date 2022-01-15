@@ -21,6 +21,7 @@
             <!--/.navbar-header -->
 
             <div class="navbar-collapse collapse" id="navigation">
+                {{ partial "langswitcher" . }}
                 <ul class="nav navbar-nav navbar-right">
                   {{ $current := . }}
 
@@ -140,7 +141,6 @@
                   {{ end }}
                   {{ end }}
                 </ul>
-                {{ partial "langswitcher" . }}
             </div>
             <!--/.nav-collapse -->
 
